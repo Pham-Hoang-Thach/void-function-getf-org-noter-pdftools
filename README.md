@@ -1,4 +1,4 @@
-# 🩹 Patch: Fix `org-noter-pdftools` Error — *void-function getf*
+# Patch: Fix `org-noter-pdftools` Error — *void-function getf*
 
 This Emacs Lisp patch fixes a common compatibility issue when using [`org-noter`](https://github.com/org-noter/org-noter) together with [`org-pdftools`](https://github.com/fuxialexander/org-pdftools) and  
 [`pdf-tools`](https://github.com/politza/pdf-tools).
@@ -21,7 +21,7 @@ This patch redefines `org-pdftools-open-pdftools` to use `cl-getf` and safely ov
 - Add the following to your `init.el` or `config.org`:
 
 ```emacs-lisp
-(load "~/.emacs.d/lisp/void-function-getf-org-noter-pdftools.el")
+(load "~/.emacs.d/lisp/fix-void-function-getf-org-noter-pdftools.el")
 ```
 
 - Alternatively, you can copy the contents of these files into your Emacs configuration file.

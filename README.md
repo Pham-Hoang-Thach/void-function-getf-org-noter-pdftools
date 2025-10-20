@@ -5,21 +5,21 @@ This Emacs Lisp patch fixes a common compatibility issue when using [`org-noter`
 
 ## 🧩 Problem
 
-Many users encounter this error when opening PDF links inside Org documents managed by `org-noter` or `org-pdftools`:
+After Emacs is updated, users encounter this error when opening PDF links inside Org documents managed by `org-noter` or `org-pdftools`:
 
 ## 🧠 Root Cause
 
 - The function `org-pdftools-open-pdftools` in `org-pdftools` internally calls `getf`,  
   which was defined in the legacy `cl` library (used in older Emacs versions).
 - In modern Emacs (≥27), `getf` is no longer defined by default — it has been replaced by `cl-getf` in `cl-lib`.
-- This causes the “void-function getf” error whenever you open a PDF link.
+- This causes the `void-function getf` error whenever you open a PDF link.
 
 ## 🩹 The Fix
 
 This patch redefines `org-pdftools-open-pdftools` to use `cl-getf` and safely overrides the original function after `org-pdftools` loads.
 
 ⚙️ Installation
-- Add the following to your init.el or config.org:
+- Add the following to your `init.el` or `config.org`:
 
 ```emacs-lisp
 (load "~/.emacs.d/lisp/fix-org-noter-pdftools.el")

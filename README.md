@@ -18,13 +18,14 @@ After Emacs is updated, users encounter this error when opening PDF links inside
 
 This patch redefines `org-pdftools-open-pdftools` to use `cl-getf` and safely overrides the original function after `org-pdftools` loads.
 
-⚙️ Installation
 - Add the following to your `init.el` or `config.org`:
 
 ```emacs-lisp
-(load "~/.emacs.d/lisp/fix-org-noter-pdftools.el")
+(load "~/.emacs.d/lisp/void-function-getf-org-noter-pdftools.el")
 ```
 
+- Alternatively, you can copy the contents of these files into your Emacs configuration file.
+  
 ## 💡 Technical Notes
 
 - `cl-getf` is the modern, namespaced equivalent of getf provided by `cl-lib`.

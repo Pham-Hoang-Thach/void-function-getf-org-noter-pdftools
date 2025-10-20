@@ -24,7 +24,7 @@ This patch redefines `org-pdftools-open-pdftools` to use `cl-getf` and safely ov
 (load "~/.emacs.d/lisp/fix-void-function-getf-org-noter-pdftools.el")
 ```
 
-- Alternatively, you can copy the contents of these files into your Emacs configuration file.
+- Alternatively, you can copy the contents of this file into your Emacs configuration file.
   
 ## 💡 Technical Notes
 
